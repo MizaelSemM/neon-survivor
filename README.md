@@ -56,13 +56,11 @@ Todo o balanceamento (velocidade, dano, spawn, cores e lista de upgrades) fica e
 
 ## Deploy
 
-O projeto é 100% estático e pode ser publicado em qualquer host de site estático (GitHub Pages, Netlify, Vercel, Cloudflare Pages) usando:
+O projeto é 100% estático e pode ser publicado em qualquer host de site estático (GitHub Pages, Netlify, Vercel, Cloudflare Pages) usando `npm run build` (saída em `dist/`).
 
-```bash
-npm run build
-```
+O deploy no **GitHub Pages** já está automatizado em `.github/workflows/deploy-pages.yml`: cada push na `main` roda o build e publica o jogo.
 
-Como o Vite gera caminhos absolutos por padrão, em hosts que servem o site em um subdiretório (ex.: `usuario.github.io/neon-survivor/`) configure `base: '/neon-survivor/'` em `vite.config.ts`.
+Para ativar, no repositório vá em **Settings → Pages** e defina **Source** como **GitHub Actions**. O site fica em `https://<usuario>.github.io/<repo>/`.
 
 ## Licença
 
