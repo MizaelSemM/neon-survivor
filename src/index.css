@@ -1,0 +1,22 @@
+:root { --cyan: #00f0ff; --pink: #ff2e88; --lime: #7dff4f; --bg: #05020f; }
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; height: 100%; background: var(--bg); }
+body { font-family: system-ui, sans-serif; color: #e8f9ff; overflow: hidden; }
+
+.stage { position: relative; width: 100%; height: 100%; }
+.canvas-host { position: absolute; inset: 0; }
+.canvas-host canvas { display: block; }
+
+.hud { position: absolute; top: 16px; left: 16px; right: 16px; pointer-events: none; }
+.bars { display: grid; gap: 6px; max-width: 360px; }
+.bar { height: 10px; border: 1px solid currentColor; border-radius: 6px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: currentColor; box-shadow: 0 0 12px currentColor; transition: width 0.1s linear; }
+.bar.hp { color: var(--pink); }
+.bar.xp { color: var(--lime); height: 6px; }
+.readout { display: flex; gap: 20px; margin-top: 10px; font-variant-numeric: tabular-nums; text-shadow: 0 0 8px var(--cyan); }
+
+.overlay { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 20px; background: rgba(5, 2, 15, 0.82); text-align: center; }
+.overlay h2 { margin: 0; font-size: 2.2rem; color: var(--cyan); text-shadow: 0 0 18px var(--cyan); }
+.choices { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.overlay button { padding: 14px 22px; font: inherit; color: var(--cyan); background: transparent; border: 1px solid var(--cyan); border-radius: 8px; cursor: pointer; box-shadow: 0 0 14px rgba(0, 240, 255, 0.35); }
+.overlay button:hover, .overlay button:focus-visible { background: var(--cyan); color: var(--bg); outline: none; }
